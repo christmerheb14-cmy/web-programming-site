@@ -1,24 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>History of the Internet</title>
-</head>
-<body>
-  <header>
-    <h1>History of the Internet</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#Internet-History">History of the Internet</a></li>
-        <li><a href="#World-Wide-Web">History of the World Wide Web</a></li>
-        <li><a href="#Key-Technologies">Key Technologies</a></li>
-        <li><a href="#References">References</a></li>
-      </ul>
-    </nav>
-  </header>
+{% extends "base.html" %}
 
-  <main>
+{% block title %}
+Internet History with AI
+{% endblock %}
+
+{% block content %}
+<section>
+
+    <ul class="weekly-list">
+        <li>
+            <a href="/"> Home</a>
+        </li>
+
+        <li>
+            <a href="/internet-history"> Internet history</a>
+        </li>
+
+         <li>
+            <a href="/internet-history-ai">Internet history with AI</a>
+        </li>
+
+        <li>
+            <a href="/web-history"> Web history</a>
+        </li>
+
+         <li>
+            <a href="/web-history-ai"> Web history with AI</a>
+        </li>
+    </ul>
+</section>
+
     <section id="Introduction">
       <h2>Introduction</h2>
       <p>
@@ -161,10 +172,5 @@
         </li>
       </ul>
     </section>
-  </main>
 
-  <footer>
-    <p>For educational purposes only.</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

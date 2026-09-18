@@ -1,199 +1,321 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the Internet</title>
-</head>
-<body>
-    <header>
-    <h1>History of the Internet</h1>
+{% extends "base.html" %}
 
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/internet-history">Internet History</a></li>
-            <li><a href="/web-history">Web History</a></li>
-        </ul>
-    </nav>
-</header>
+{% block title %}
+History of the Internet
+{% endblock %}
 
+{% block content %}
 
-    <main>
-        <section>
-             <h2>Introduction</h2>
-             <p>The Internet is a global system of interconnected computer networks that connects billions of devices worldwide, ranging from personal smartphones to massive server cluster. The Internet functions like a single computer and has constructed a unified digital structure relying on standardized communication rules, mainly on TCP/IP. The protocols describe how data is divided into small packets, sent across physical cables and wireless channels, and accurately reassembled at its final location. The Internet is not owned or controlled by a defined entity; it is a decentralized resource used for modern communications, commerce and information sharing. The Internet provides the logical and physical network that enables raw data to be sent. However, services on top such as email, video streaming, and World Wide Web let you access hyperlinked documents, trade goods, chat with people over long distances, and more.</p>
-        </section>
-        <section>
-             <h2>Internet History Timeline</h2>
+<section>
 
-             <article>
-                 <h3>1969 — ARPANET</h3>
-                  <p>
-                    It was the first large-scale packet-switching network and the principal predecessor of today’s Internet.
-                 </p>
-                  <p>
-                    Source:
-                    <a href="https://www.livescience.com/20727-internet-history.html">Live Science</a>
-                 </p>
-            </article>
-                
-            <article>
-                <h3>1971 —Email was introduced on ARPANET, including the use of @ to separate a user from a computer.</h3>
-                <p>
-                    Email became one of the first widely useful applications of computer networking and helped shift networks from resource-sharing systems into communication platforms.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">National Science and Media Museum</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1973–1974 —TCP was developed by Vint Cerf and Bob Kahn as a method for connecting separate packet-switched networks.</h3>
-                <p>
-                    The idea of an "internetwork"—multiple independent networks communicating with one another—was central to creating the Internet.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://www.livescience.com/20727-internet-history.html">Live Science</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1983 —ARPANET adopted TCP/IP as its standard networking protocol suite.</h3>
-                <p>
-                    TCP/IP provided a common way for different networks and computers to communicate. This is widely regarded as a foundational moment for the modern Internet.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://www.computerhistory.org/internethistory/1980s/">Computer History Museum</a>
-                </p>
-            </article>
-            <article>
-                <h3>1983 —The Domain Name System (DNS) was introduced.</h3>
-                <p>
-                    DNS translated numerical IP addresses into memorable names such as example.com, making the growing network much easier for people to use.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">National Science and Media Museum</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1986 —NSFNET went online, linking U.S. supercomputing centers and later connecting regional academic networks.</h3>
-                <p>
-                    NSFNET greatly expanded Internet access beyond the original ARPANET research community and helped establish a national Internet backbone.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://www.livescience.com/20727-internet-history.html">Live Science</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1989 —Tim Berners-Lee proposed the World Wide Web at CERN.</h3>
-                <p>
-                    The proposal combined hypertext with networked information, creating a simple system for linking and accessing documents across the Internet.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://home.cern/science/computing/birth-web/history-web">CERN</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1991 —The World Wide Web became publicly available.</h3>
-                <p>
-                    CERN released the Web software and made it possible for people outside CERN to create and access Web pages. This marked the beginning of the Web’s global expansion.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://home.cern/science/computing/birth-web/history-web">CERN</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1993 —The Mosaic Web browser was released.</h3>
-                <p>
-                    Mosaic made the Web easier to use through a graphical interface and helped bring Internet use to a much broader, nonacademic audience.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://home.cern/science/computing/birth-web/history-web">CERN</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1993 —CERN made the Web software freely available on a royalty-free basis.</h3>
-                <p>
-                    Removing licensing barriers encouraged universities, companies, and individuals to build Web servers, browsers, and online services.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://home.cern/science/computing/birth-web/history-web">CERN</a>
-                </p>
-            </article>
-            
-            <article>
-                <h3>1994–1995 —Commercial Internet and Web use expanded rapidly.</h3>
-                <p>
-                    The rise of commercial browsers, Internet service providers, and online businesses helped transform the Internet from primarily an academic and research network into a mass communication and commerce platform.
-                </p>
-                <p>
-                    Source:
-                    <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">National Science and Media Museum </a>
-                </p>
-            </article>
-        </section>
-        
-        <section>
-            <h2>Key Technologies</h2>
-            
-            <article>
-                <h3>TCP/IP </h3>
-                <p>The core protocols that allow devices and networks to communicate and exchange data across the Internet.</p>
-            </article>
-            
-            <article>
-                <h3>Domain Name System (DNS) </h3>
-                <p>Converts human-readable domain names, such as example.com, into numerical IP addresses that computers use.</p>
-            </article>
+    <ul class="weekly-list">
+        <li>
+            <a href="/"> Home</a>
+        </li>
 
-            <article>
-                <h3>HTTP/HTTPS </h3>
-                <p>Protocols used to transfer web pages and other resources between web browsers and servers. HTTPS adds encryption and authentication for safer communication.</p>
-            </article>
-        </section>
-        <section>
-            <h2>References</h2>
-            <ul>
-                <li>
-                    <a href="https://www.livescience.com/20727-internet-history.html">Live Science</a>
-                </li>
-                <li>
-                    <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">National Science and Media Museum</a>
-                </li>
-                <li>
-                    <a href="https://www.computerhistory.org/internethistory/1980s/">Computer History Museum</a>
-                </li>
-                <li>
-                    <a href="https://home.cern/science/computing/birth-web/history-web">CERN</a>
-                </li>
-            </ul>
-        </section>
-    
-    
-    </main>
-    
-    <footer>
-        <p>Web Programming — built with Flask and deployed on Render.</p>
+        <li>
+            <a href="/internet-history"> Internet history</a>
+        </li>
+
+         <li>
+            <a href="/internet-history-ai">Internet history with AI</a>
+        </li>
+
+        <li>
+            <a href="/web-history"> Web history</a>
+        </li>
+
+         <li>
+            <a href="/web-history-ai"> Web history with AI</a>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Introduction</h2>
+
+    <p>
+        The Internet is a global system of interconnected computer networks
+        that connects billions of devices worldwide, ranging from personal
+        smartphones to massive server clusters. The Internet functions like a
+        single computer and has constructed a unified digital structure relying
+        on standardized communication rules, mainly TCP/IP. The protocols
+        describe how data is divided into small packets, sent across physical
+        cables and wireless channels, and accurately reassembled at its final
+        location. The Internet is not owned or controlled by a defined entity;
+        it is a decentralized resource used for modern communications, commerce
+        and information sharing. The Internet provides the logical and physical
+        network that enables raw data to be sent. However, services on top such
+        as email, video streaming, and the World Wide Web let you access
+        hyperlinked documents, trade goods, chat with people over long distances,
+        and more.
+    </p>
+</section>
+
+<section>
+    <h2>Internet History Timeline</h2>
+
+    <article>
+        <h3>1969 — ARPANET</h3>
+
         <p>
-            This website is created for educational purposes only, as part of the
-            GIN446 - Web Programming course, School of Engineering, USEK.
-            (Fall 2026-2027)
+            It was the first large-scale packet-switching network and the
+            principal predecessor of today’s Internet.
         </p>
-    </footer>
-</body>
-</html>
+
+        <p>
+            Source:
+            <a href="https://www.livescience.com/20727-internet-history.html">
+                Live Science
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1971 — Email was introduced on ARPANET, including the use of @
+            to separate a user from a computer.
+        </h3>
+
+        <p>
+            Email became one of the first widely useful applications of
+            computer networking and helped shift networks from resource-sharing
+            systems into communication platforms.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">
+                National Science and Media Museum
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1973–1974 — TCP was developed by Vint Cerf and Bob Kahn as a
+            method for connecting separate packet-switched networks.
+        </h3>
+
+        <p>
+            The idea of an “internetwork”—multiple independent networks
+            communicating with one another—was central to creating the Internet.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.livescience.com/20727-internet-history.html">
+                Live Science
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1983 — ARPANET adopted TCP/IP as its standard networking protocol
+            suite.
+        </h3>
+
+        <p>
+            TCP/IP provided a common way for different networks and computers
+            to communicate. This is widely regarded as a foundational moment
+            for the modern Internet.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.computerhistory.org/internethistory/1980s/">
+                Computer History Museum
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>1983 — The Domain Name System (DNS) was introduced.</h3>
+
+        <p>
+            DNS translated numerical IP addresses into memorable names such as
+            example.com, making the growing network much easier for people to use.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">
+                National Science and Media Museum
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1986 — NSFNET went online, linking U.S. supercomputing centers and
+            later connecting regional academic networks.
+        </h3>
+
+        <p>
+            NSFNET greatly expanded Internet access beyond the original ARPANET
+            research community and helped establish a national Internet backbone.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.livescience.com/20727-internet-history.html">
+                Live Science
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1989 — Tim Berners-Lee proposed the World Wide Web at CERN.
+        </h3>
+
+        <p>
+            The proposal combined hypertext with networked information, creating
+            a simple system for linking and accessing documents across the Internet.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://home.cern/science/computing/birth-web/history-web">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>1991 — The World Wide Web became publicly available.</h3>
+
+        <p>
+            CERN released the Web software and made it possible for people
+            outside CERN to create and access Web pages. This marked the
+            beginning of the Web’s global expansion.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://home.cern/science/computing/birth-web/history-web">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>1993 — The Mosaic Web browser was released.</h3>
+
+        <p>
+            Mosaic made the Web easier to use through a graphical interface and
+            helped bring Internet use to a much broader, nonacademic audience.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://home.cern/science/computing/birth-web/history-web">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1993 — CERN made the Web software freely available on a royalty-free
+            basis.
+        </h3>
+
+        <p>
+            Removing licensing barriers encouraged universities, companies, and
+            individuals to build Web servers, browsers, and online services.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://home.cern/science/computing/birth-web/history-web">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>
+            1994–1995 — Commercial Internet and Web use expanded rapidly.
+        </h3>
+
+        <p>
+            The rise of commercial browsers, Internet service providers, and
+            online businesses helped transform the Internet from primarily an
+            academic and research network into a mass communication and commerce
+            platform.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">
+                National Science and Media Museum
+            </a>
+        </p>
+    </article>
+</section>
+
+<section>
+    <h2>Key Technologies</h2>
+
+    <article>
+        <h3>TCP/IP</h3>
+
+        <p>
+            The core protocols that allow devices and networks to communicate
+            and exchange data across the Internet.
+        </p>
+    </article>
+
+    <article>
+        <h3>Domain Name System (DNS)</h3>
+
+        <p>
+            Converts human-readable domain names, such as example.com, into
+            numerical IP addresses that computers use.
+        </p>
+    </article>
+
+    <article>
+        <h3>HTTP/HTTPS</h3>
+
+        <p>
+            Protocols used to transfer web pages and other resources between web
+            browsers and servers. HTTPS adds encryption and authentication for
+            safer communication.
+        </p>
+    </article>
+</section>
+
+<section>
+    <h2>References</h2>
+
+    <ul>
+        <li>
+            <a href="https://www.livescience.com/20727-internet-history.html">
+                Live Science
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet">
+                National Science and Media Museum
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.computerhistory.org/internethistory/1980s/">
+                Computer History Museum
+            </a>
+        </li>
+
+        <li>
+            <a href="https://home.cern/science/computing/birth-web/history-web">
+                CERN
+            </a>
+        </li>
+    </ul>
+</section>
+
+{% endblock %}

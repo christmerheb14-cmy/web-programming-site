@@ -1,25 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the Web</title>
-</head>
-<body>
-    <header>
-        <h1>History of the World Wide Web</h1>
+{% extends "base.html" %}
 
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/internet-history">Internet History</a></li>
-                <li><a href="/web-history">Web History</a></li>
-            </ul>
-        </nav>
-    </header>
+{% block title %}
+Web History
+{% endblock %}
 
+{% block content %}
 
-    <main>
+<section>
+
+    <ul class="weekly-list">
+        <li>
+            <a href="/"> Home</a>
+        </li>
+
+        <li>
+            <a href="/internet-history"> Internet history</a>
+        </li>
+
+         <li>
+            <a href="/internet-history-ai">Internet history with AI</a>
+        </li>
+
+        <li>
+            <a href="/web-history"> Web history</a>
+        </li>
+
+         <li>
+            <a href="/web-history-ai"> Web history with AI</a>
+        </li>
+    </ul>
+</section>
+
         <section>
              <h2>Introduction</h2>
              <p>The Web is a service that runs on the Internet. In its technically most accurate use, the term “Web” is used to refer to the World Wide Web. The Internet is the worldwide connection of computers; the Web is the software usually a web browser that lets one navigate, view, and interact with multimedia documents. The main technology that the Web runs on are the URLs (Unform Resource Locators), HTML (HyperText Markup Language), and HTTP (Hypertext Transfer Protocol). URLs are the web addresses that uniquely specify a resource. HTML specifies the formatting of text, images, and other embedded media, into documents that can be respawned into web pages. HTTP then determines the way browsers and servers request and transmit the files over the Internet. There are clickable hyperlinks embedded in documents and by this feature, the Web converts mere connectivity of networks into a human-readable and interconnected web of digital information.</p>
@@ -180,17 +191,5 @@
                 </li>
             </ul>
         </section>
-    
-    
-    </main>
-    
-    <footer>
-        <p>Web Programming — built with Flask and deployed on Render.</p>
-        <p>
-            This website is created for educational purposes only, as part of the
-            GIN446 - Web Programming course, School of Engineering, USEK.
-            (Fall 2026-2027)
-        </p>
-    </footer>
-</body>
-</html>
+
+{% endblock %}
