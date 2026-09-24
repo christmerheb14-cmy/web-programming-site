@@ -1,0 +1,222 @@
+/* Form itself */
+form {
+    display: block !important;
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+/* All main and nested fieldsets */
+form fieldset {
+    display: block !important;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    padding: 1.5rem;
+    border: 2px solid #1f5f8b;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Fieldset headings */
+form legend {
+    display: block !important;
+    width: auto;
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: #1f5f8b;
+}
+
+/* Normal labels */
+form fieldset > label {
+    display: block !important;
+    width: 100%;
+    margin: 0.75rem 0 0.35rem;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+/* Normal inputs, select boxes, and textareas */
+form fieldset > input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+form fieldset > select,
+form fieldset > textarea {
+    display: block !important;
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 0 1rem;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Textarea */
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Checkbox, radio, and color inputs */
+form input[type="checkbox"],
+form input[type="radio"],
+form input[type="color"] {
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0.35rem 0.35rem 0.35rem 0;
+}
+
+/* Labels belonging to radio buttons and checkboxes */
+form input[type="checkbox"] + label,
+form input[type="radio"] + label {
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0.35rem 1rem 0.35rem 0;
+    font-weight: normal;
+}
+
+/* Paragraphs inside the form */
+form p {
+    display: block;
+    margin: 0.75rem 0;
+}
+
+/* Color input */
+form input[type="color"] {
+    height: 42px;
+    padding: 2px;
+}
+
+/* Focus effect */
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: 3px solid rgba(31, 95, 139, 0.25);
+    border-color: #1f5f8b;
+}
+
+/* Buttons */
+form button {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #f39a2f;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #d97816;
+}
+
+/* Small screens */
+@media (max-width: 700px) {
+    form {
+        margin: 1rem;
+        width: auto;
+    }
+
+    form fieldset {
+        padding: 1rem;
+    }
+
+    form fieldset > input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+    form fieldset > select,
+    form fieldset > textarea {
+        max-width: 100% !important;
+    }
+}
+/* Smooth movement when navigating between sections */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation menu at the top of the form */
+.section-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    background-color: #1f5f8b;
+    border-radius: 8px;
+}
+
+/* Navigation links */
+.section-navigation a {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    background-color: white;
+    color: #1f5f8b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Navigation hover effect */
+.section-navigation a:hover,
+.section-navigation a:focus {
+    background-color: #f39a2f;
+    color: white;
+}
+
+/* Prevent the heading from hiding underneath a sticky navigation menu */
+form fieldset {
+    scroll-margin-top: 2rem;
+}
+
+/* Fixed button in the bottom-right corner */
+.back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    background-color: #f39a2f;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Back-to-top hover effect */
+.back-to-top:hover,
+.back-to-top:focus {
+    background-color: #d97816;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Mobile navigation */
+@media (max-width: 700px) {
+    .section-navigation {
+        flex-direction: column;
+        align-items: stretch;
+        margin: 1rem;
+    }
+
+    .section-navigation a {
+        text-align: center;
+    }
+
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+    }
+}

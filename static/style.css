@@ -20,8 +20,8 @@
 
     --font-size-small: 0.875rem;
     --font-size-body: 1rem;
-    --font-size-title: clamp(2rem, 5vw, 4rem);
-    --font-size-heading: clamp(1.5rem, 3vw, 2.25rem);
+    --font-size-title: clamp(2rem, 8vw, 4rem);
+    --font-size-heading: clamp(1.5rem, 6vw, 2.25rem);
 
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
@@ -40,7 +40,7 @@
     --shadow-glow: 0 0 18px rgba(47, 155, 234, 0.24);
     --shadow-glow-strong: 0 0 28px rgba(57, 230, 224, 0.3);
 
-    --content-width: 1120px;
+    --content-width: 100%;
     --transition-fast: 180ms ease;
     --transition-normal: 280ms ease;
 }
@@ -52,7 +52,9 @@
 }
 
 html {
+    min-width: 320px;
     min-height: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -62,6 +64,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     color: var(--color-text);
     background:
         radial-gradient(
@@ -77,7 +80,7 @@ body {
         var(--color-bg);
     font-family: var(--font-body);
     font-size: var(--font-size-body);
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
 body::before {
@@ -97,13 +100,14 @@ body::before {
 header,
 main,
 footer {
-    width: min(100% - 2.5rem, var(--content-width));
+    width: calc(100% - 2rem);
+    max-width: var(--content-width);
     margin-inline: auto;
 }
 
 header {
     position: relative;
-    padding: var(--space-xl) 0 var(--space-lg);
+    padding: 3rem 0 1.5rem;
     border-bottom: 1px solid var(--color-border-soft);
 }
 
@@ -111,7 +115,7 @@ header::after {
     position: absolute;
     bottom: -1px;
     left: 0;
-    width: 7rem;
+    width: 5rem;
     height: 2px;
     content: "";
     background: linear-gradient(
@@ -126,6 +130,7 @@ header::after {
 header h1 {
     max-width: 850px;
     margin: 0;
+    overflow-wrap: anywhere;
     color: var(--color-text);
     font-family: var(--font-display);
     font-size: var(--font-size-title);
@@ -139,17 +144,10 @@ header p {
     max-width: 680px;
     margin: var(--space-md) 0 0;
     color: var(--color-text-muted);
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
 }
 
-/*
-    Navigation styles.
-
-    These rules use the existing nav, ul, li, and a elements.
-    They will apply automatically if a navigation menu is present
-    in a page that extends base.html.
-*/
 nav {
     width: 100%;
     margin-top: var(--space-lg);
@@ -163,26 +161,27 @@ nav ul {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    gap: var(--space-xs) var(--space-sm);
-    width: 100%;
+    gap: var(--space-xs);
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 nav li {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
+    min-width: 0;
     text-align: center;
 }
 
 nav a {
     position: relative;
     display: block;
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--space-sm);
+    overflow-wrap: anywhere;
     color: var(--color-text-muted);
-    font-size: var(--font-size-small);
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-decoration: none;
     text-transform: uppercase;
     transition:
@@ -205,7 +204,6 @@ nav a::after {
     );
     box-shadow: var(--shadow-glow);
     transform: scaleX(0);
-    transform-origin: center;
     transition: transform var(--transition-fast);
 }
 
@@ -225,37 +223,22 @@ nav a[aria-current="page"]::after {
 
 main {
     flex: 1;
-    padding: var(--space-2xl) 0;
+    padding: 3rem 0;
 }
 
 section {
     position: relative;
     overflow: hidden;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
+    padding: 1.25rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background:
         linear-gradient(
-            135deg,
-            rgba(20, 52, 87, 0.72),
+            145deg,
+            rgba(20, 52, 87, 0.82),
             rgba(8, 22, 39, 0.92)
         );
     box-shadow: var(--shadow-card);
-}
-
-section::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 12rem;
-    height: 12rem;
-    content: "";
-    pointer-events: none;
-    background: radial-gradient(
-        circle,
-        rgba(57, 230, 224, 0.12),
-        transparent 68%
-    );
 }
 
 section h2 {
@@ -285,7 +268,7 @@ section h2::after {
 
 .weekly-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--space-md);
     margin: 0;
     padding: 0;
@@ -293,6 +276,7 @@ section h2::after {
 }
 
 .weekly-list li {
+    min-width: 0;
     min-height: 100%;
     overflow: hidden;
     border: 1px solid var(--color-border-soft);
@@ -322,7 +306,8 @@ section h2::after {
     display: flex;
     align-items: flex-start;
     min-height: 100%;
-    padding: var(--space-lg);
+    padding: var(--space-md);
+    overflow-wrap: anywhere;
     color: var(--color-text);
     font-weight: 600;
     letter-spacing: 0.01em;
@@ -341,23 +326,12 @@ section h2::after {
     box-shadow: 0 0 8px rgba(57, 230, 224, 0.7);
 }
 
-.weekly-list a:hover,
-.weekly-list a:focus-visible {
-    color: var(--color-cyan);
-    text-shadow: 0 0 12px rgba(57, 230, 224, 0.5);
+a {
+    color: var(--color-primary-bright);
+    transition:
+        color var(--transition-fast),
+        text-shadow var(--transition-fast);
 }
-
-.weekly-list a:focus-visible {
-    outline: 2px solid var(--color-cyan);
-    outline-offset: -4px;
-}
-
-@media (max-width: 560px) {
-    .weekly-list {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 a:hover,
 a:focus-visible {
@@ -371,7 +345,7 @@ a:focus-visible {
 }
 
 footer {
-    padding: var(--space-lg) 0 var(--space-xl);
+    padding: 1.5rem 0 2.5rem;
     border-top: 1px solid var(--color-border-soft);
     color: var(--color-text-subtle);
     font-size: var(--font-size-small);
@@ -380,61 +354,90 @@ footer {
 footer p {
     max-width: 850px;
     margin: 0;
+    overflow-wrap: anywhere;
 }
 
 footer p + p {
     margin-top: var(--space-sm);
-    color: var(--color-text-subtle);
 }
 
-@media (max-width: 700px) {
+@media (min-width: 480px) {
     header,
     main,
     footer {
-        width: min(100% - 1.5rem, var(--content-width));
+        width: calc(100% - 3rem);
     }
 
     header {
-        padding-top: var(--space-xl);
-    }
-
-    main {
-        padding: var(--space-xl) 0;
+        padding-top: 4rem;
     }
 
     section {
-        padding: var(--space-lg) var(--space-md);
-    }
-
-    nav ul {
-        justify-content: center;
+        padding: 1.75rem;
     }
 
     nav li {
         flex: 1 1 40%;
     }
+}
+
+@media (min-width: 700px) {
+    header,
+    main,
+    footer {
+        width: calc(100% - 4rem);
+    }
+
+    nav ul {
+        gap: var(--space-sm);
+    }
+
+    nav li {
+        flex: 1 1 auto;
+    }
 
     nav a {
-        padding: var(--space-sm) var(--space-xs);
-        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--font-size-small);
+        letter-spacing: 0.08em;
     }
 
-    .weekly-list a {
-        padding: var(--space-md);
+    .weekly-list {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
-    header p {
-        font-size: 1rem;
+    section {
+        padding: 2.25rem;
     }
 }
 
-@media (max-width: 420px) {
-    nav li {
-        flex-basis: 100%;
+@media (min-width: 1000px) {
+    :root {
+        --content-width: 1180px;
     }
 
-    nav a {
-        text-align: left;
+    header,
+    main,
+    footer {
+        width: calc(100% - 5rem);
+    }
+
+    header {
+        padding: 5rem 0 2rem;
+    }
+
+    main {
+        padding: 5rem 0;
+    }
+
+    section {
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    :root {
+        --content-width: 1280px;
     }
 }
 
