@@ -51,6 +51,7 @@ def home():
         {"week": 2, "title": "History of the Web (AI)", "url": "/web-history-ai"},
         {"week": 4, "title": "Engineering Student Profile", "url": "/submit-profile"},
         {"week": 5, "title": "JavaScript app", "url": "/quiz"},
+         {"week": 6, "title": "Profile Review", "url": "/profile-review"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
@@ -74,6 +75,10 @@ def internet_history_ai():
 def web_history_ai():
     return render_template("web-history-ai.html")
 
+@app.route("/profile-review")
+def profile_review():
+    return render_template("profile_review.html")
+
 
 @app.route("/submit-profile", methods=["GET", "POST"])
 def submit_profile():
@@ -87,7 +92,7 @@ def submit_profile():
         skills = request.form.getlist("skills")         # checkboxes -> list
         software = request.form.getlist("software")     # multiple <select> -> list
         return render_template(
-            "profile.html", data=data, skills=skills, software=software
+            "profile_review.html", data=data, skills=skills, software=software
         )
 
     # First visit (GET): just show the empty form.
