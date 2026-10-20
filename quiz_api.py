@@ -44,7 +44,7 @@ quiz_bp = Blueprint("quiz", __name__)
 
 @quiz_bp.route("/live-quiz")
 def quiz_page():
-    return render_template("live_quiz.html")
+    return render_template("quiz.html")
 
 
 @quiz_bp.route("/api/questions/count")
