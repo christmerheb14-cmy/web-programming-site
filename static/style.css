@@ -471,3 +471,54 @@ footer p + p {
     padding: 1rem;
     overflow-wrap: anywhere;
 }
+
+/* Clearer headings and spacing */
+header,
+main,
+footer {
+    padding: 1rem;
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+}
+
+main p {
+    line-height: 1.6;
+}
+
+/* Clear interaction states for links */
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #1d4ed8;
+    outline-offset: 3px;
+}
+
+/* Buttons and form controls */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
