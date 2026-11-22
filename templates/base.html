@@ -6,68 +6,31 @@
 
     <meta name="description"
           content="{% block description %}A portfolio of weekly web programming projects, quizzes, and profile activities.{% endblock %}">
+
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
-    <title>
-        {% block title %}My Web Programming Portfolio{% endblock %}
-    </title>
+    <title>{% block title %}My Web Programming Portfolio{% endblock %}</title>
 
     <link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
+          href="{{ url_for('static', filename='style.css') }}">
+
     {% block head %}{% endblock %}
 </head>
 
-
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <header>
         <h1>Web Programming Portfolio — Christ Merheb</h1>
         <p>A live site that grows one page or feature every week.</p>
     </header>
 
-    <main>
-        {% block content %}
-        <section>
-    <h2>Weekly Work</h2>
+    <nav aria-label="Main navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+    </nav>
 
-    <ul class="weekly-list">
-        <li>
-            <a href="/">Week 1 — Live site launched</a>
-        </li>
-
-        <li>
-            <a href="/internet-history">Week 2 — Internet history</a>
-        </li>
-
-         <li>
-            <a href="/internet-history-ai">Week 2 — Internet history with AI</a>
-        </li>
-
-        <li>
-            <a href="/web-history">Week 2 — Web history</a>
-        </li>
-
-         <li>
-            <a href="/web-history-ai">Week 2 — Web history with AI</a>
-        </li>
-        <li>
-            <a href="/submit-profile">Week 4 — Profile Form</a>
-        </li>
-         <li>
-            <a href="/quiz">Week 5 — Quiz</a>
-        </li>
-                <li>
-            <a href="/submit-profile">Week 6 — Profile Review</a>
-        </li>
-        <li>
-            <a href="/live_quiz">Week 7 — Live Quiz</a>
-        </li>
-        <li>
-            <a href="/profile-validated">Week 8 — Profile Validated</a>
-        </li>
-    </ul>
-</section>
-        {% endblock %}
+    <main id="main">
+        {% block content %}{% endblock %}
     </main>
 
     <footer>
@@ -79,6 +42,5 @@
             (Fall 2026-2027)
         </p>
     </footer>
-
 </body>
 </html>
